@@ -3,10 +3,13 @@ import sys
 from settings import *
 from start_screen import *
 from media import *
+from dictionary import *
 
 class ProgectLavel():
 
     def __init__(self):
+
+        self.dictionary = Dictionary()
         
         self.settings = Settings()
 
@@ -59,9 +62,9 @@ class ProgectLavel():
 
     def _check_events_KEYDOWN(self, event):# === НАЖАТИЕ КНОПКИ ===
         if event.key == pygame.K_ESCAPE:
-            sys.exit()
+            self.start_screen.menu_event(1)
         elif event.key == pygame.K_RETURN:
-            self.start_screen.menu_event()
+            self.start_screen.menu_event(0)
         elif event.key == pygame.K_DOWN:
             self.media.cursor_move()
             self.start_screen.update(-1)
