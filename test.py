@@ -1,1 +1,4 @@
-print(1080/1.6875)
+import pygame.display
+pygame.display.init()
+info = pygame.display.Info()
+print(info)

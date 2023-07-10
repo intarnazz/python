@@ -1,4 +1,5 @@
 import json
+import pygame
 
 class Settings():
     """ НАСТОЙКИ """
@@ -10,8 +11,11 @@ class Settings():
         with open(file) as f:
             self.main_dictionary = json.load(f)
 
-        self.screen_width = 1920
-        self.screen_height = 1080
+        pygame.init()
+        info = pygame.display.Info()
+
+        self.screen_width = info.current_w
+        self.screen_height = info.current_h
 
         self.bgcolor = (0,0,0)
 
